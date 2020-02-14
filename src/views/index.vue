@@ -59,10 +59,50 @@
                 </v-list-item-content>
               </v-list-item>
             </router-link>
+            <router-link to="clientes">
+              <v-list-item :to="{name:'clientes'}">
+                <v-list-item-icon>
+                  <v-icon>fas fa-users</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Clientes</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link to="proveedores">
+              <v-list-item :to="{name:'proveedores'}">
+                <v-list-item-icon>
+                  <v-icon>fas fa-user-tie</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Proveedores</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link to="cierrex">
+              <v-list-item :to="{name:'cierrex'}">
+                <v-list-item-icon>
+                  <v-icon>far fa-closed-captioning</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Cierres</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link to="inventario">
+              <v-list-item :to="{name:'inventario'}">
+                <v-list-item-icon>
+                  <v-icon>fas fa-boxes</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Inventario</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
           </v-list-item-group>
         </v-list>
       </v-navigation-drawer>
-      <v-container fluid fill-height class="py-0">
+      <v-container fluid class="py-0">
         <router-view class="view two"></router-view>
       </v-container>
     </v-content>

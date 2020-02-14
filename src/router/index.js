@@ -9,55 +9,93 @@ import NotaDebito from '@/components/comprobantesTipo/notaDebito.vue'
 import GuiaRemision from '@/components/comprobantesTipo/guiaRemision.vue'
 import liquidacionCompra from '@/components/comprobantesTipo/liquidacionCompra.vue'
 import proformas from '@/components/comprobantesTipo/proformas.vue'
+import clientes from '@/components/clientes/list.vue'
+import proveedores from '@/components/proveedores/list.vue'
+import cierres from '@/components/cierres/index.vue'
+import cierresx from '@/components/cierres/listx.vue'
+import cierresz from '@/components/cierres/listz.vue'
+import inventario from '@/components/inventario/index.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
     component: Index,
     children : [
       {
-        path:'/comprobantes',
+        path:'/comprobantes/',
         name:'comprobantes',
         component:Comprobantes,
         children:[
           {
-            path:'/comprobantes/facturas',
+            path:'/facturas',
             name:'facturas',
             component:Factura
           },
           {
-            path:'/comprobantes/retenciones',
+            path:'/retenciones',
             name:'retenciones',
             component:Retenciones
           },
           {
-            path:'/comprobantes/notaDeCredito',
+            path:'/notaDeCredito',
             name:'notaCredito',
             component:NotaCredito
           },
           {
-            path:'/comprobantes/notaDeDebito',
+            path:'/notaDeDebito',
             name:'notaDebito',
             component:NotaDebito
           },
           {
-            path:'/comprobantes/guiaRemision',
+            path:'/guiaRemision',
             name:'guiaRemision',
             component:GuiaRemision
           },
           {
-            path:'/comprobantes/liquidacionCompra',
+            path:'/liquidacionCompra',
             name:'liquidacionCompra',
             component:liquidacionCompra
           },
           {
-            path:'/comprobantes/proformas',
+            path:'/proformas',
             name:'proformas',
             component:proformas
           }
         ]
+      },
+      {
+        path:'/clientes',
+        name:'clientes',
+        component:clientes
+      },
+      {
+        path:'/proveedores',
+        name:'proveedores',
+        component:proveedores
+      },
+      {
+        path:'/cierres',
+        name:'cierres',
+        component:cierres,
+        children:[
+          {
+            path:'/cierres/x',
+            name:'cierrex',
+            component:cierresx
+          },
+          {
+            path:'/cierres/z',
+            name:'cierrez',
+            component:cierresz
+          }
+        ]
+      },
+      {
+        path:'/inventario',
+        name:'inventario',
+        component:inventario
       }
     ]
   }
