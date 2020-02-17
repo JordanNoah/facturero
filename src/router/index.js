@@ -15,6 +15,14 @@ import cierres from '@/components/cierres/index.vue'
 import cierresx from '@/components/cierres/listx.vue'
 import cierresz from '@/components/cierres/listz.vue'
 import inventario from '@/components/inventario/index.vue'
+import inventarioList from '@/components/inventario/inventario.vue'
+import productos from '@/components/inventario/productos.vue'
+import movimientos from '@/components/inventario/movimientos.vue'
+import reportes from '@/components/inventario/reportes.vue'
+import unidades from '@/components/inventario/unidades.vue'
+import categorias from '@/components/inventario/categorias.vue'
+import marcas from '@/components/inventario/marcas.vue'
+import bodegas from '@/components/inventario/bodegas.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -95,7 +103,49 @@ const routes = [
       {
         path:'/inventario',
         name:'inventario',
-        component:inventario
+        component:inventario,
+        children:[
+          {
+            path:'/inventario/list',
+            name:'list',
+            component:inventarioList
+          },
+          {
+            path:'/inventario/productos',
+            name:'productos',
+            component:productos
+          },
+          {
+            path:'/inventario/movimientos',
+            name:'movimientos',
+            component:movimientos
+          },
+          {
+            path:'/inventario/reportes',
+            name:'reportes',
+            component:reportes
+          },
+          {
+            path:'/inventario/unidades',
+            name:'unidades',
+            component:unidades
+          },
+          {
+            path:'/inventario/categorias',
+            name:'categorias',
+            component:categorias
+          },
+          {
+            path:'/inventario/marcas',
+            name:'marcas',
+            component:marcas
+          },
+          {
+            path:'/inventario/bodegas',
+            name:'bodegas',
+            component:bodegas
+          }
+        ]
       }
     ]
   }

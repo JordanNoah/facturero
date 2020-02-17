@@ -17,7 +17,7 @@
           </v-btn>
 
           <v-btn icon text @click="$vuetify.theme.dark=!$vuetify.theme.dark">
-              <i class="mr-2 fas fa-moon" :class="($vuetify.theme.dark==false)?('grey--text'):('yellow--text')"></i>
+              <i class="fas fa-moon" :class="($vuetify.theme.dark==false)?('grey--text'):('yellow--text')"></i>
           </v-btn>
 
           <v-menu offset-y>
@@ -89,8 +89,8 @@
                 </v-list-item-content>
               </v-list-item>
             </router-link>
-            <router-link to="inventario">
-              <v-list-item :to="{name:'inventario'}">
+            <router-link to="list">
+              <v-list-item :to="{name:'list'}">
                 <v-list-item-icon>
                   <v-icon>fas fa-boxes</v-icon>
                 </v-list-item-icon>
