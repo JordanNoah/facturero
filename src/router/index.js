@@ -17,12 +17,20 @@ import cierresz from '@/components/cierres/listz.vue'
 import inventario from '@/components/inventario/index.vue'
 import inventarioList from '@/components/inventario/inventario.vue'
 import productos from '@/components/inventario/productos.vue'
-import movimientos from '@/components/inventario/movimientos.vue'
 import reportes from '@/components/inventario/reportes.vue'
 import unidades from '@/components/inventario/unidades.vue'
 import categorias from '@/components/inventario/categorias.vue'
 import marcas from '@/components/inventario/marcas.vue'
 import bodegas from '@/components/inventario/bodegas.vue'
+import movimienList from '@/components/inventario/movimientos/list.vue'
+import createMovimien from '@/components/inventario/movimientos/createMovimien.vue'
+import movimienIndex from '@/components/inventario/movimientos/movimientos.vue'
+import resumenMenu from '@/components/resumen/index.vue'
+import negocioIndex from '@/components/negocio/index.vue'
+import establecimiento from '@/components/negocio/establecimiento.vue'
+import pos from '@/components/negocio/pos.vue'
+import roles from '@/components/negocio/roles.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -31,6 +39,28 @@ const routes = [
     name: 'home',
     component: Index,
     children : [
+      {
+        path:'negocio',
+        name:'negocio',
+        component:negocioIndex,
+        children:[
+          {
+            path:'establecimiento',
+            name:'establecimiento',
+            component:establecimiento
+          },
+          {
+            path:'pos',
+            name:'pos',
+            component:pos
+          },
+          {
+            path:'roles',
+            name:'roles',
+            component:roles
+          }
+        ]
+      },
       {
         path:'/comprobantes/',
         name:'comprobantes',
@@ -106,19 +136,31 @@ const routes = [
         component:inventario,
         children:[
           {
-            path:'/inventario/list',
+            path:'list',
             name:'list',
             component:inventarioList
           },
           {
-            path:'/inventario/productos',
+            path:'productos',
             name:'productos',
             component:productos
           },
           {
-            path:'/inventario/movimientos',
+            path:'movimientos',
             name:'movimientos',
-            component:movimientos
+            component:movimienIndex,
+            children:[
+              {
+                path:'create',
+                name:'createMovi',
+                component:createMovimien
+              },
+              {
+                path:'list',
+                name:'movimList',
+                component:movimienList
+              }
+            ]
           },
           {
             path:'/inventario/reportes',
@@ -146,6 +188,11 @@ const routes = [
             component:bodegas
           }
         ]
+      },
+      {
+        path:'resumen',
+        name:'resumen',
+        component:resumenMenu
       }
     ]
   }

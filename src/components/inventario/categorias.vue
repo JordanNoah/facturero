@@ -51,6 +51,12 @@
                     </v-tooltip>
                     <v-tooltip bottom>
                         <template v-slot:activator="{ on }">
+                            <v-icon color="primary" class="mr-2" dark v-on="on" @click="visualizar(item)">fas fa-book-open</v-icon>
+                        </template>
+                        <span>Visualizar categoria</span>
+                    </v-tooltip>
+                    <v-tooltip bottom>
+                        <template v-slot:activator="{ on }">
                             <v-icon color="primary" dark v-on="on" @click="eliminar(item)">fas fa-trash</v-icon>
                         </template>
                         <span>Eliminar categoria</span>

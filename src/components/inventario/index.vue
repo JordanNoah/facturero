@@ -3,7 +3,7 @@
         <v-tabs grow>
             <v-tab :to="{ name: 'list' }">Inventario</v-tab>
             <v-tab :to="{ name: 'productos' }">Productos</v-tab>
-            <v-tab :to="{ name: 'movimientos' }">Movimientos</v-tab>
+            <v-tab :to="{ name: 'movimList' }">Movimientos</v-tab>
             <v-tab :to="{ name: 'reportes' }">Reportes</v-tab>
             <v-tab :to="{ name: 'unidades'}">Unidades</v-tab>
             <v-tab :to="{ name: 'categorias'}">Categorías</v-tab>

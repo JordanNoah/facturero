@@ -49,6 +49,16 @@
       <v-navigation-drawer absolute temporary v-model="menuApp">
         <v-list>
           <v-list-item-group>
+            <router-link to="negocio">
+              <v-list-item :to="{name:'negocio'}">
+                <v-list-item-icon>
+                  <v-icon>fas fa-store-alt</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Mi negocio</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
             <router-link to="comprobantes">
               <v-list-item :to="{name:'comprobantes'}">
                 <v-list-item-icon>
@@ -96,6 +106,16 @@
                 </v-list-item-icon>
                 <v-list-item-content>
                   <v-list-item-title>Inventario</v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </router-link>
+            <router-link to="resumen">
+              <v-list-item :to="{name:'resumen'}">
+                <v-list-item-icon>
+                  <v-icon>fas fa-poll</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                  <v-list-item-title>Resumen</v-list-item-title>
                 </v-list-item-content>
               </v-list-item>
             </router-link>
