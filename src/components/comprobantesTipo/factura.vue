@@ -90,6 +90,11 @@
                                                                                 <p class="ma-2"><span class="font-weight-bold">Ambiente:</span> PRUEBAS</p>
                                                                                 <p class="ma-2"><span class="font-weight-bold">Emisión:</span> NORMAL</p>
                                                                                 <p class="ma-2 font-weight-bold">Clave de acceso:</p>
+                                                                                <v-row no-gutters>
+                                                                                    <v-col cols="12" class="d-flex">
+                                                                                        <svg id="barcode" :jsbarcode-format="barcodeFormat" :jsbarcode-value="barcodeValue" jsbarcode-textmargin="0" jsbarcode-height="40" jsbarcode-width="1" jsbarcode-fontSize="1" jsbarcode-fontoptions="bold"></svg>
+                                                                                    </v-col>
+                                                                                </v-row>
                                                                             </v-card-text>
                                                                         </v-card>
                                                                     </v-col>
@@ -388,6 +393,8 @@
 <script>
     import { mask } from 'vue-the-mask'
     import draggable from 'vuedraggable'
+    import JsBarcode from 'jsbarcode'
+    import Canvas from 'canvas'
 
     export default {
     directives: {
@@ -399,12 +406,21 @@
     data: () => ({
         mask: '###-###-#########',
         listProducts: [],
-        formasPago:false
+        formasPago:false,
+        barcodeValue:"2202202001099289325700110010500000059011234567815",
+        barcodeFormat:"CODE128A"
     }),
     methods:{
         add: function() {
-        this.listProducts.push({});
-    }
+            this.listProducts.push({});
+        },
+        barcode:function() {
+            JsBarcode("#barcode").init();
+            JsBarcode(Canvas);
+        }
+    },
+    mounted(){
+        this.barcode()
     }
   }
 </script>
