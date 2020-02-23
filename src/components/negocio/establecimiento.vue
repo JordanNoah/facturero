@@ -1,60 +1,92 @@
 <template>
-    <v-container fluid>
-        <v-dialog v-model="action" persistent permanent max-width="550px">
-            <v-card>
-                <v-card-title>
-                    Registrar
-                </v-card-title>
-                <v-card-text>
-                    <v-row>
-                        <v-col cols="12">
-                            <v-row class="d-flex align-center">
-                                <v-col cols="5"><p class="mb-0 mr-3">Nombre:</p></v-col>
-                                <v-col><v-text-field name="name" outlined dense hide-details clearable></v-text-field></v-col>
-                            </v-row>
-                        </v-col>
-                        <v-col cols="12">
-                            <v-row class="d-flex align-center">
-                                <v-col cols="5"><p class="mb-0 mr-3">Dirección:</p></v-col>
-                                <v-col><v-text-field name="name" outlined dense hide-details clearable></v-text-field></v-col>
-                            </v-row>
-                        </v-col>
-                        <v-col cols="12">
-                            <v-row class="d-flex align-center">
-                                <v-col cols="5"><p class="mb-0 mr-3">N° Establecimiento:</p></v-col>
-                                <v-col><v-text-field name="name" outlined dense hide-details clearable></v-text-field></v-col>
-                            </v-row>
-                        </v-col>
-                        <v-col cols="12">
-                            <v-row class="d-flex align-center">
-                                <v-col cols="5"><p class="mb-0 mr-3">Último n° establecimiento:</p></v-col>
-                                <v-col><v-text-field name="name" outlined dense hide-details clearable></v-text-field></v-col>
-                            </v-row>
-                        </v-col>
-                    </v-row>
-                </v-card-text>
-                <v-card-actions class="d-flex justify-end">
-                    <v-btn outlined color="error" @click="action=false">Cancelar</v-btn>
-                    <v-btn outlined color="success">Guardar</v-btn>
-                </v-card-actions>
-            </v-card>
-        </v-dialog>
-        <v-card outlined>
-            <v-row no-gutters>
-                <v-col cols="12" class="d-flex justify-end pa-3">
-                    <v-btn outlined @click="action=true">Añadir</v-btn>
+  <v-container class="pa-0">
+    <v-dialog v-model="action" persistent permanent max-width="550px">
+      <v-card>
+        <v-card-title>
+          Registrar
+        </v-card-title>
+        <v-card-text>
+          <v-row>
+            <v-col cols="12">
+              <v-row class="d-flex align-center" no-gutters>
+                <v-col cols="5">
+                  <p class="mb-0 mr-3">Nombre:</p>
                 </v-col>
                 <v-col>
-                    <v-row class="d-flex justify-end px-9">
-                        <v-col cols="6">
-                            <v-text-field v-model="search" append-icon="fas fa-search" label="Search" single-line hide-details></v-text-field>
-                        </v-col>
-                    </v-row>
-                    <v-data-table :headers="headers" :items="desserts" :search="search"></v-data-table>
+                  <v-text-field name="name" outlined dense hide-details clearable></v-text-field>
                 </v-col>
-            </v-row>
-        </v-card>
-    </v-container>
+              </v-row>
+            </v-col>
+            <v-col cols="12">
+              <v-row class="d-flex align-center" no-gutters>
+                <v-col cols="5">
+                  <p class="mb-0 mr-3">Dirección:</p>
+                </v-col>
+                <v-col>
+                  <v-text-field name="name" outlined dense hide-details clearable></v-text-field>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col cols="12">
+              <v-row class="d-flex align-center" no-gutters>
+                <v-col cols="5">
+                  <p class="mb-0 mr-3">N° Establecimiento:</p>
+                </v-col>
+                <v-col>
+                  <v-text-field name="name" outlined dense hide-details clearable></v-text-field>
+                </v-col>
+              </v-row>
+            </v-col>
+            <v-col cols="12">
+              <v-row class="d-flex align-center" no-gutters>
+                <v-col cols="5">
+                  <p class="mb-0 mr-3">Último n° establecimiento:</p>
+                </v-col>
+                <v-col>
+                  <v-text-field name="name" outlined dense hide-details clearable></v-text-field>
+                </v-col>
+              </v-row>
+            </v-col>
+          </v-row>
+        </v-card-text>
+        <v-card-actions class="d-flex justify-end">
+          <v-btn outlined color="error" @click="action=false">Cancelar</v-btn>
+          <v-btn outlined color="success">Guardar</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <v-card outlined>
+      <v-row no-gutters>
+        <v-col cols="12" class="d-flex justify-end pa-3">
+          <v-btn outlined @click="action=true">Añadir</v-btn>
+        </v-col>
+        <v-col>
+          <v-row class="d-flex justify-end px-9">
+            <v-col cols="6">
+              <v-text-field v-model="search" append-icon="fas fa-search" label="Search" single-line hide-details>
+              </v-text-field>
+            </v-col>
+          </v-row>
+          <v-data-table :headers="headers" :items="desserts" :search="search">
+            <template v-slot:item.action="{item}">
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                  <v-icon color="primary" class="mr-2" dark v-on="on" @click="editar(item)">far fa-edit</v-icon>
+                </template>
+                <span>Editar establecimiento</span>
+              </v-tooltip>
+              <v-tooltip bottom>
+                <template v-slot:activator="{ on }">
+                  <v-icon color="primary" dark v-on="on" @click="eliminar(item)">fas fa-trash</v-icon>
+                </template>
+                <span>Eliminar establecimiento</span>
+              </v-tooltip>
+            </template>
+          </v-data-table>
+        </v-col>
+      </v-row>
+    </v-card>
+  </v-container>
 </template>
 <script>
   export default {
@@ -63,17 +95,11 @@
         search: '',
         action:false,
         headers: [
-          {
-            text: 'Dessert (100g serving)',
-            align: 'left',
-            sortable: false,
-            value: 'name',
-          },
-          { text: 'Calories', value: 'calories' },
-          { text: 'Fat (g)', value: 'fat' },
-          { text: 'Carbs (g)', value: 'carbs' },
-          { text: 'Protein (g)', value: 'protein' },
-          { text: 'Iron (%)', value: 'iron' },
+          { text: 'ID', value: 'name' },
+          { text: 'Nombre', value: 'calories' },
+          { text: 'Dirección', value: 'fat' },
+          { text: 'Establecimiento', value: 'carbs' },
+          { text: 'Opciones', value: 'action' }
         ],
         desserts: [
           {

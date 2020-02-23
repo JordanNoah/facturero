@@ -73,23 +73,23 @@
                                                                         </v-card>
                                                                         <v-card outlined>
                                                                             <v-card-text>
-                                                                                <div>SIBERIANCOM S.A.</div>
-                                                                                <div>SIBERIAN</div>
-                                                                                <div>Dir. Matriz:GUAYAS / GUAYAQUIL / ROCAFUERTE / AV. QUITO 939 Y VELEZ</div>
-                                                                                <div>Dir. Sucursal:GUAYAS / GUAYAQUIL / ROCAFUERTE / AV. QUITO 939 Y VELEZ</div>
-                                                                                <div>Obligado a llevar contabilidad:SI</div>
+                                                                                <p class="ma-0 font-weight-bold">SIBERIANCOM S.A.</p>
+                                                                                <p class="ma-0 font-weight-bold">SIBERIAN</p>
+                                                                                <p class="ma-0"><span class="font-weight-bold">Dir. Matriz:</span>GUAYAS / GUAYAQUIL / ROCAFUERTE / AV. QUITO 939 Y VELEZ</p>
+                                                                                <p class="ma-0"> <span class="font-weight-bold">Dir. Sucursal:</span> GUAYAS / GUAYAQUIL / ROCAFUERTE / AV. QUITO 939 Y VELEZ</p>
+                                                                                <p class="ma-0"> <span class="font-weight-bold">Obligado a llevar contabilidad:</span> SI</p>
                                                                             </v-card-text>
                                                                         </v-card>
                                                                     </v-col>
                                                                     <v-col cols="7" class="px-1">
                                                                         <v-card outlined class="fill-height">
                                                                             <v-card-text>
-                                                                                <div>RUC:0992893257001</div>
-                                                                                <div>FACTURA</div>
-                                                                                <div>No.001-050-000005849</div>
-                                                                                <div>Ambiente: PRUEBAS</div>
-                                                                                <div>Emisión: NORMAL</div>
-                                                                                <div>Clave de acceso:</div>
+                                                                                <p class="ma-2 title font-weight-bold">RUC:0992893257001</p>
+                                                                                <p class="ma-2 headline font-weight-black">FACTURA</p>
+                                                                                <p class="ma-2 title font-weight-bold">No.001-050-000005849</p>
+                                                                                <p class="ma-2"><span class="font-weight-bold">Ambiente:</span> PRUEBAS</p>
+                                                                                <p class="ma-2"><span class="font-weight-bold">Emisión:</span> NORMAL</p>
+                                                                                <p class="ma-2 font-weight-bold">Clave de acceso:</p>
                                                                             </v-card-text>
                                                                         </v-card>
                                                                     </v-col>

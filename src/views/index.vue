@@ -1,7 +1,6 @@
 <template>
     <v-content>
       <v-app-bar color="primary" flat>
-          <v-app-bar-nav-icon class="white--text" @click="menuApp=!menuApp"></v-app-bar-nav-icon>
           <v-toolbar-title class="white--text">NOMBRE DE LA EMPRESA</v-toolbar-title>
 
           <v-spacer></v-spacer>
@@ -46,11 +45,12 @@
               </v-list>
           </v-menu>
       </v-app-bar>
-      <v-navigation-drawer absolute temporary v-model="menuApp">
+
+      <v-navigation-drawer expand-on-hover app>
         <v-list>
           <v-list-item-group>
             <router-link to="negocio">
-              <v-list-item :to="{name:'negocio'}">
+              <v-list-item :to="{name:'establecimiento'}">
                 <v-list-item-icon>
                   <v-icon>fas fa-store-alt</v-icon>
                 </v-list-item-icon>

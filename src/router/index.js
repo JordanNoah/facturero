@@ -62,42 +62,42 @@ const routes = [
         ]
       },
       {
-        path:'/comprobantes/',
+        path:'comprobantes',
         name:'comprobantes',
         component:Comprobantes,
         children:[
           {
-            path:'/facturas',
+            path:'facturas',
             name:'facturas',
             component:Factura
           },
           {
-            path:'/retenciones',
+            path:'retenciones',
             name:'retenciones',
             component:Retenciones
           },
           {
-            path:'/notaDeCredito',
+            path:'notaDeCredito',
             name:'notaCredito',
             component:NotaCredito
           },
           {
-            path:'/notaDeDebito',
+            path:'notaDeDebito',
             name:'notaDebito',
             component:NotaDebito
           },
           {
-            path:'/guiaRemision',
+            path:'guiaRemision',
             name:'guiaRemision',
             component:GuiaRemision
           },
           {
-            path:'/liquidacionCompra',
+            path:'liquidacionCompra',
             name:'liquidacionCompra',
             component:liquidacionCompra
           },
           {
-            path:'/proformas',
+            path:'proformas',
             name:'proformas',
             component:proformas
           }

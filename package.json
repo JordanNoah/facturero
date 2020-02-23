@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
+    "canvas": "^2.6.1",
     "core-js": "^3.4.4",
+    "jsbarcode": "^3.11.0",
     "roboto-fontface": "*",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",

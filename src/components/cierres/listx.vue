@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <v-container>
         <v-data-table :headers="headers" :items="clientes" :search="search">
             <template v-slot:item.action="{item}">
                 <v-tooltip bottom>
@@ -10,7 +10,7 @@
                 </v-tooltip>
             </template>
         </v-data-table>
-    </div>
+    </v-container>
 </template>
 <script>
 export default {

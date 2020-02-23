@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid>
+    <v-container>
         <v-tabs grow>
             <v-tab :to="{ name:'establecimiento' }">Establecimiento</v-tab>
             <v-tab :to="{ name:'pos' }">POS</v-tab>
